@@ -26,7 +26,21 @@ function nFactorial(n) {
   }
 }
 
-function nFibonacci(n) {}
+function nFibonacci(n) {
+  if (n >= 0) {
+    if (n === 0) {
+      return 0;
+    } else {
+      if (n === 1) {
+        return 1;
+      } else {
+        return nFibonacci(n - 1) + nFibonacci(n - 2);
+      }
+    }
+  } else {
+    return console.log("No se aceptan numeros negativos");
+  }
+}
 
 /*
 Implementar la clase Queue, sabiendo que es una estructura de tipo FIFO, donde el primer elemento que ingresa es el primero que se quita. Definir los siguientes métodos:
