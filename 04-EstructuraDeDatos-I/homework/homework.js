@@ -52,21 +52,20 @@ Pueden utilizar class o función constructora.
 */
 
 function Queue() {
-  this.array=[];
-  
+  this.array = [];
 }
 
 Queue.prototype.enqueue = function (valor) {
-  this.array.push(valor)
-}
+  this.array.push(valor);
+};
 
 Queue.prototype.dequeue = function () {
-  return this.array.shift()
-}
+  return this.array.shift();
+};
 
-Queue.prototype.size = function(){
-  return this.array.length
-}
+Queue.prototype.size = function () {
+  return this.array.length;
+};
 
 // No modifiquen nada debajo de esta linea
 // --------------------------------
