@@ -11,9 +11,47 @@ Implementar la clase LinkedList, definiendo los siguientes métodos:
   En caso de que la búsqueda no arroje resultados, search debe retornar null.
 */
 
-function LinkedList() {}
+function LinkedList() {
+  this.head = null;
+}
 
-function Node(value) {}
+function Node(value) {
+  this.value = value;
+  this.next = null;
+}
+
+LinkedList.prototype.add = function (value) {
+  // CREAMOS EL NODO NUEVO
+  const newNode = new Node(value);
+  let current = this.head;
+  // SI NO TENEMOS HEAD(NULL)  ----->  HEAD APUNTA/GUARDA EL VALOR DEL NUEVO NODO
+  if (!current) {
+    this.head = newNode;
+    return value;
+  } else {
+    //SI TENEMOS HEAD --------> THIS.NEXT APUNTA/GUARDA EL VALOR DEL NUEVO NODO
+    while (current.next !== null) {
+      current = current.next;
+    }
+    current.next = newNode;
+    return value
+  }
+};
+LinkedList.prototype.remove = function () {
+  //SI LA LISTA ESTA VACIA -----> HEAD = NULL RETORNAR NULL
+  let current = this.head
+  if (!this.head) {
+    return null;
+  } else {
+  // SI TIENE UN SOLO NODO
+    this.head = null;
+    return current
+  }
+};
+
+
+
+LinkedList.prototype.search = function (value) {};
 
 /*
 Implementar la clase HashTable.
